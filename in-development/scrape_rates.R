@@ -13,8 +13,12 @@ setwd(working_directory)
 # source the scraping helper script
 source("scrape_helper.R")
 
-# define variables
+### define variables
+
+# url to pull from
 url_rates <- "https://www.federalreserve.gov/releases/h15/"
+
+# date released values
 selector_date <- ".dates"
 chaff_date <- "Release date: "
 
