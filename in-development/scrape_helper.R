@@ -62,10 +62,12 @@ pull_character_element <- function(page,
 pull_date_element <- function(format_date = "mdy",
                               chaff,
                               page,
-                              selector_pull){
+                              selector){
   # pulls a date element from a loaded webpage
   
   if(format_date == "mdy"){
+    print(pull_character_element(page = page,
+                                 selector = selector))
     date_element <- lubridate::mdy(pull_character_element(page = page,
                                                           selector = selector))
   }else{
