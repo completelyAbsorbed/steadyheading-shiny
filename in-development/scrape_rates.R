@@ -30,3 +30,5 @@ date_release_trimmed <- str_remove(string = date_release,
 # finalize processing of the element into Date() format
 date_of_release <- lubridate::mdy(date_release_trimmed)
 
+
+### ### functionalize the above process, add to a helper script file, make this one be rates specific  ### ### 
