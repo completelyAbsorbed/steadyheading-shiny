@@ -37,7 +37,7 @@ first_five <- c("Unit:", # our assumption of the first five values in the Date c
 # library() calls                                                              #  
 #                                                                              #
 ################################################################################
-
+library(tidyverse)
 
 ################################################################################
 #                                                                              #
@@ -93,5 +93,44 @@ write_fed_rates <- function(fed_rates,
                     filename,
                     ".DATASAVE"))
   
+  
+}
+
+prepare_for_plotting <- function(fed_rates,
+                                 flag_replace_NA = TRUE,
+                                 replacement_NA = "",
+                                 flag_drop_NA = TRUE){
+  # converts maturity columns to a single column and returns a dataframe ready for ggplot2
+  
+  dates <- fed_rates$Date # save the dates
+  
+  rates <- fed_rates[,-1] # lop dates off of fed_rates
+  
+  rates_stack <- stack(rates) # turns maturities into a factor column, "ind"
+  
+  rates_prepared <- data.frame(dates,
+                               rates_stack[,1],
+                               rates_stack[,2])
+  
+  names(rates_prepared) <- c("Date",
+                             "Interest",
+                             "Maturity")
+  
+  # fix the formats of the columns
+  rates_prepared$Date <- as.Date(rates_prepared$Date)
+  rates_prepared$Interest <- as.numeric(rates_prepared$Interest)
+  
+  # if flag_replace_NA is raised, replace NAs in the Interest column with the specified value
+  if(flag_replace_NA){
+    index_Interest_NA <- which(is.na(rates_prepared$Interest))
+    rates_prepared$Interest[index_Interest_NA] <- replacement_NA
+  }
+  
+  # if flag_drop_NA is raised, drop rows with NA
+  if(flag_drop_NA){
+    rates_prepared <- drop_na(rates_prepared)
+  }
+  
+  return(rates_prepared)
   
 }
