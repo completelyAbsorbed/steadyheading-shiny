@@ -36,11 +36,15 @@ user_interface <- fluidPage(
     br(),
     p("Experienced with - Analysis, Visualization, Business Communication, Machine Learning, SQL, SAS, Python, APL, Random Forests, XGBoost, Regression, Financial Data, Claims Data, ETL, Automation, Scraping, Loss Reserving, Property & Casualty Data, Workers Compensation, and more!"),
     br(),
-    p("<<< link to youtube demo here >>>"),
+    tags$div("For a demo of my analytical skills in Excel, VBA, and R, ",
+             tags$a(href = "https://www.youtube.com/watch?v=qzvJFXrjRrU",
+                    "watch this short video.")),
     br(),
     h3("Get in Touch"),
     p("email : liz -at- completelyabsorbed -dot- com"),
-    p("LinkedIn : <link>")
+    tags$div("Connect with me on ",
+            tags$a(href = "https://www.linkedin.com/in/liz-young-663554275/",
+            "LinkedIn."))
   ),
   
   # Main panel for displaying outputs ----
