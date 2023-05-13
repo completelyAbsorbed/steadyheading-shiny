@@ -122,8 +122,8 @@ user_interface <- fluidPage(
                                                    value = FALSE)),
                          plotOutput("plot_fed_rates",
                                     height = 750)),
-                tabPanel("Weather"),
-                tabPanel("Excel")
+                # tabPanel("Weather"),
+                # tabPanel("Excel")
     )
   )
 )

@@ -1,6 +1,6 @@
 ################################################################################
 #                                                                              #
-# fed_rates_xml_transform.R                                                      #  
+# fed_rates_xml_transform.R                                                    #  
 #                                                                              #  
 #   transforms an xml file of historical federal interest rates                #  
 #                                                                              #

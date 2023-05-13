@@ -1,13 +1,15 @@
 library(ggplot2)
 
 # define the filepath for the working directory
-directory_working <- "C:/Users/liz/iCloudDrive/code/shiny/dashboards/public/steadyheading-shiny/in-development"
+# directory_working <- "C:/Users/liz/iCloudDrive/code/shiny/dashboards/public/steadyheading-shiny/in-development"
 
 # set the working directory
-setwd(directory_working)
+# setwd(directory_working)
 
 # define the filepath for fed rates
-filepath_fed_rates <- "C:/Users/liz/iCloudDrive/code/shiny/dashboards/public/steadyheading-shiny/in-development/data/FRB_H15.csv"
+# filepath_fed_rates <- "C:/Users/liz/iCloudDrive/code/shiny/dashboards/public/steadyheading-shiny/in-development/data/FRB_H15.csv"
+filepath_fed_rates <- "data/FRB_H15.csv"
+
 
 # source the fed rates loading and transforming helper file
 source("load_fed_rates.R")
